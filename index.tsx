@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { render } from 'react-dom';
-import Hello from './Hello';
+import ReactDOM from 'react-dom';
+import App from './App';
 import todoReducer from './reducers/todoReducers';
 import filterReducer from './reducers/filterReducer';
 import { addTodo, setFilter, toggleTodo } from './actions';
@@ -16,4 +16,5 @@ store.dispatch(addTodo("Potato"));
 store.dispatch(addTodo("Onion"));
 store.dispatch(setFilter("SHOW_PENDING"));
 store.dispatch(toggleTodo("Potato"));
-
+const el = document.getElementById('root');
+ReactDOM.render(<App />, el);
